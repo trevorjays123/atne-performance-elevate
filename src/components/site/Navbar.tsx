@@ -14,6 +14,7 @@ const Navbar = () => {
             <li><a href="#approach" className="hover:text-primary transition-colors">Approach</a></li>
             <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
             <li><a href="#booking" className="hover:text-primary transition-colors">Booking</a></li>
+            <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
           </ul>
           <Button variant="hero" size="sm" asChild>
             <a href="#booking">Book Session</a>

@@ -16,7 +16,7 @@ const Booking = () => {
               <span className="italic text-gradient">transformation.</span>
             </h2>
             <p className="mt-6 text-primary-foreground/80 text-lg max-w-md leading-relaxed">
-              Schedule a complimentary 20-minute discovery call. We'll map your goals and design a path forward — together.
+              Schedule a complimentary 20-minute discovery call. We'll map your goals and design a sustainable path forward — together. Proudly based in the Twin Cities, serving Minneapolis, St. Paul, and the greater Minnesota community.
             </p>
 
             <ul className="mt-8 space-y-3">
