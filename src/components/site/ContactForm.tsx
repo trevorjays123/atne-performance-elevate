@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z
@@ -76,9 +77,31 @@ const ContactForm = () => {
     }
 
     setSubmitting(true);
-    // Simulated submit — wire to your backend or Lovable Cloud edge function later.
-    await new Promise((r) => setTimeout(r, 700));
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      phone: parsed.data.phone || null,
+      interest: parsed.data.interest || null,
+      message: parsed.data.message,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 500) : null,
+    });
     setSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Couldn't send your message",
+        description: "Please try again in a moment, or email us directly.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "generate_lead", {
+        event_category: "contact",
+        event_label: parsed.data.interest || "general",
+      });
+    }
 
     toast({
       title: "Message sent",
