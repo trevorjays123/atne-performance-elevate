@@ -13,7 +13,7 @@ const Booking = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Booking</span>
             <h2 className="mt-4 font-display text-4xl md:text-6xl font-light leading-tight">
               Begin your<br />
-              <span className="italic text-gradient">transformation.</span>
+              <span className="italic text-gradient-light">transformation.</span>
             </h2>
             <p className="mt-6 text-primary-foreground/80 text-lg max-w-md leading-relaxed">
               Schedule a complimentary 20-minute discovery call. We'll map your goals and design a sustainable path forward — together. Proudly based in the Twin Cities, serving Minneapolis, St. Paul, and the greater Minnesota community.

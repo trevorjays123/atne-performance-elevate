@@ -15,7 +15,7 @@ const Hero = () => {
           height={1280}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-background" />
       </div>
 
       {/* Floating glow orbs */}
@@ -29,10 +29,10 @@ const Hero = () => {
             Premium Performance & Recovery
           </div>
 
-          <img src={logo} alt="ATNE Performance" width={120} height={120} className="mx-auto h-28 w-28 mb-6 drop-shadow-2xl" />
+          <img src={logo} alt="ATNE Performance" width={140} height={140} className="mx-auto h-32 w-32 mb-6 drop-shadow-[0_8px_24px_hsl(154_45%_8%_/_0.6)]" />
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-primary-foreground tracking-tight leading-[1.05]">
-            ATNE <span className="italic text-gradient font-normal">Performance</span>
+            ATNE <span className="italic text-gradient-light font-normal">Performance</span>
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
