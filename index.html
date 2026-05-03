@@ -11,15 +11,31 @@
     <meta property="og:title" content="ATNE Performance — Unlock Your Peak State" />
     <meta property="og:description" content="Performance coaching and relief therapy designed to elevate your mind and restore your body." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="/og-image.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="/og-image.jpg" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Google Analytics 4 -->
+    <script>
+      (function () {
+        var GA_ID = window.__GA_MEASUREMENT_ID__ || 'G-XXXXXXXXXX';
+        if (!GA_ID || GA_ID.indexOf('G-') !== 0 || GA_ID === 'G-XXXXXXXXXX') return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { anonymize_ip: true });
+      })();
+    </script>
   </body>
 </html>

@@ -15,7 +15,7 @@ const SEO = ({
   title,
   description,
   canonical,
-  image = "https://lovable.dev/opengraph-image-p98pqg.png",
+  image = "https://atneperformance.com/og-image.jpg",
   type = "website",
   jsonLd,
 }: SEOProps) => {
