@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,6 +52,9 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);
+  // Spam protection: honeypot field + minimum time-to-submit
+  const [honeypot, setHoneypot] = useState("");
+  const mountedAt = useRef<number>(Date.now());
 
   const update = <K extends keyof ContactValues>(key: K, value: string) => {
     setValues((v) => ({ ...v, [key]: value }));
@@ -60,6 +63,23 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Bot check 1: honeypot — real humans can't see/fill the hidden field
+    if (honeypot.trim().length > 0) {
+      toast({ title: "Message sent", description: "Thanks — we'll be in touch within one business day." });
+      setValues({ name: "", email: "", phone: "", interest: "", message: "" });
+      return;
+    }
+    // Bot check 2: minimum dwell time (humans take >2s to fill a form)
+    if (Date.now() - mountedAt.current < 2000) {
+      toast({
+        title: "Please take a moment",
+        description: "Form submitted too quickly — try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const parsed = contactSchema.safeParse(values);
     if (!parsed.success) {
       const fieldErrors: FieldErrors = {};
@@ -108,6 +128,7 @@ const ContactForm = () => {
       description: "Thanks — we'll be in touch within one business day.",
     });
     setValues({ name: "", email: "", phone: "", interest: "", message: "" });
+    mountedAt.current = Date.now();
   };
 
   return (
@@ -116,6 +137,19 @@ const ContactForm = () => {
       noValidate
       className="glass rounded-3xl p-6 md:p-8 shadow-[var(--shadow-glass)] space-y-5"
     >
+      {/* Honeypot — hidden from humans, irresistible to bots */}
+      <div aria-hidden="true" className="absolute left-[-9999px] w-px h-px overflow-hidden" tabIndex={-1}>
+        <label htmlFor="company">Company</label>
+        <input
+          id="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       <div>
         <h3 className="font-display text-2xl text-primary">Send a Message</h3>
         <p className="text-sm text-muted-foreground mt-1">
