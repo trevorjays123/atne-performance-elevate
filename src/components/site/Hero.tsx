@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="absolute bottom-1/4 -right-20 w-72 md:w-96 h-72 md:h-96 rounded-full bg-accent/15 md:bg-accent/20 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }} />
 
       <div className="container mx-auto px-6 relative">
-        <div className="max-w-4xl mx-auto text-center animate-fade-up">
+        <div className="max-w-4xl mx-auto text-center animate-fade-up relative rounded-[2rem] px-5 py-10 md:px-12 md:py-14 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/10 backdrop-blur-xl backdrop-saturate-150 border border-white/15 shadow-[0_20px_60px_-20px_hsl(154_45%_8%/0.6)] ring-1 ring-inset ring-white/5">
           <div className="inline-flex items-center gap-2 glass-dark rounded-full px-4 py-2 mb-8 text-primary-foreground/90 text-xs tracking-widest uppercase">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
             Premium Performance & Recovery
