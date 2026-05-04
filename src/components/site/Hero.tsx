@@ -15,12 +15,15 @@ const Hero = () => {
           height={1280}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-background" />
+        {/* Layered overlays: deeper at top for nav contrast, richer mid for type legibility, fades into page bg */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/75 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/40 md:to-primary/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(154_45%_8%/0.35)_0%,_transparent_60%)]" />
       </div>
 
       {/* Floating glow orbs */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/4 -left-20 w-72 md:w-96 h-72 md:h-96 rounded-full bg-accent/20 md:bg-accent/25 blur-3xl animate-float pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-72 md:w-96 h-72 md:h-96 rounded-full bg-accent/15 md:bg-accent/20 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }} />
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center animate-fade-up">
