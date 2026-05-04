@@ -15,10 +15,11 @@ const Hero = () => {
           height={1280}
           className="h-full w-full object-cover"
         />
-        {/* Layered overlays: deeper at top for nav contrast, richer mid for type legibility, fades into page bg */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/75 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/40 md:to-primary/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(154_45%_8%/0.35)_0%,_transparent_60%)]" />
+        {/* Layered overlays tuned for WCAG AA contrast on hero typography across all viewports */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-primary/40 to-primary/55 md:to-primary/45" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(154_45%_6%/0.55)_0%,_hsl(154_45%_8%/0.25)_45%,_transparent_75%)]" />
+        <div className="absolute inset-0 bg-primary/20 md:bg-primary/10" />
       </div>
 
       {/* Floating glow orbs */}
