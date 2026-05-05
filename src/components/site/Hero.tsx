@@ -33,13 +33,17 @@ const Hero = () => {
             Premium Performance & Recovery
           </div>
 
-          <img src={logo} alt="ATNE Performance" width={140} height={140} className="mx-auto h-32 w-32 mb-6 drop-shadow-[0_8px_24px_hsl(154_45%_8%_/_0.6)]" />
+          <img src={logo} alt="ATNE Performance" width={200} height={200} className="mx-auto h-40 w-40 md:h-48 md:w-48 mb-6 drop-shadow-[0_8px_24px_hsl(154_45%_8%_/_0.6)]" />
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-primary-foreground tracking-tight leading-[1.05]">
-            ATNE <span className="italic text-gradient-light font-normal">Performance</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground tracking-tight leading-[1.05]">
+            ATNE <span className="text-gradient-light font-bold">Performance</span>
           </h1>
 
-          <p className="mt-8 text-lg md:text-xl text-primary-foreground/95 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 font-display text-base md:text-lg uppercase tracking-[0.3em] text-accent font-semibold">
+            All Thought; No Emotion
+          </p>
+
+          <p className="mt-6 text-lg md:text-xl text-primary-foreground/95 max-w-2xl mx-auto leading-relaxed">
             Performance coaching and relief therapy designed to elevate your mind, restore your body, and unlock the highest version of you.
           </p>
 
