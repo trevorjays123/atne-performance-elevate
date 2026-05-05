@@ -1,7 +1,7 @@
 import Navbar from "@/components/site/Navbar";
 import Hero from "@/components/site/Hero";
 import DualApproach from "@/components/site/DualApproach";
-import Services from "@/components/site/Services";
+import ServiceCategories from "@/components/site/ServiceCategories";
 import Booking from "@/components/site/Booking";
 import Footer from "@/components/site/Footer";
 import SEO from "@/components/site/SEO";
@@ -39,7 +39,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <DualApproach />
-      <Services />
+      <ServiceCategories />
       <Booking />
       <Footer />
     </main>
