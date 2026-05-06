@@ -59,6 +59,7 @@ const Booking = () => {
         email: values.email,
         interest: SERVICE_LABELS[values.service],
         message: `Booking request: ${SERVICE_LABELS[values.service]}`,
+        submission_type: "booking",
       });
       if (error) throw error;
       setSubmitted(values);
