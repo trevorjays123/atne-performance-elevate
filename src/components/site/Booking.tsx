@@ -30,8 +30,16 @@ const SERVICE_LABELS: Record<string, string> = {
 };
 
 const bookingSchema = z.object({
-  name: z.string().trim().nonempty("Name is required").max(100, "Name too long"),
-  email: z.string().trim().email("Invalid email").max(255, "Email too long"),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Please enter your full name")
+    .max(100, "Name must be 100 characters or fewer"),
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email address")
+    .max(255, "Email must be 255 characters or fewer"),
   service: z.enum(["relief-coaching", "performance-coaching", "baseball-training"], {
     errorMap: () => ({ message: "Please select a service" }),
   }),
@@ -59,6 +67,7 @@ const Booking = () => {
         email: values.email,
         interest: SERVICE_LABELS[values.service],
         message: `Booking request: ${SERVICE_LABELS[values.service]}`,
+        submission_type: "booking",
       });
       if (error) throw error;
       setSubmitted(values);
