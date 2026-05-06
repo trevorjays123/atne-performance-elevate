@@ -54,11 +54,11 @@ const Booking = () => {
 
   const onSubmit = async (values: BookingValues) => {
     try {
-      const { error } = await supabase.from("leads").insert({
+      const { error } = await supabase.from("contact_submissions").insert({
         name: values.name,
         email: values.email,
-        topic: values.service,
-        message: values.notes ?? null,
+        interest: SERVICE_LABELS[values.service],
+        message: `Booking request: ${SERVICE_LABELS[values.service]}`,
       });
       if (error) throw error;
       setSubmitted(values);
