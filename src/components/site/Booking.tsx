@@ -82,11 +82,11 @@ const Booking = () => {
   };
 
   return (
-    <section id="booking" className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[var(--gradient-hero)]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl" />
+    <section id="booking" className="relative py-32 px-6 overflow-hidden isolate">
+      <div className="absolute inset-0 bg-[var(--gradient-hero)]" aria-hidden="true" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl pointer-events-none" aria-hidden="true" />
 
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-primary-foreground">
             <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Booking</span>
