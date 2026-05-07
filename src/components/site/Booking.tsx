@@ -94,13 +94,13 @@ const Booking = () => {
               Begin your<br />
               <span className="italic text-gradient-light">transformation.</span>
             </h2>
-            <p className="mt-6 text-primary-foreground/80 text-lg max-w-md leading-relaxed">
+            <p className="mt-6 text-primary-foreground text-lg font-medium max-w-md leading-relaxed drop-shadow-[0_1px_2px_hsl(154_45%_4%/0.6)]">
               Reserve your session in minutes. Complete payment securely via PayPal once you submit. Proudly serving Minneapolis, St. Paul, and the greater Twin Cities.
             </p>
 
             <ul className="mt-8 space-y-3">
               {["Pay securely via PayPal", "Direct line to your coach", "Studio or virtual sessions"].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-primary-foreground/90">
+                <li key={t} className="flex items-center gap-3 text-primary-foreground font-medium">
                   <span className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center">
                     <Check className="h-3.5 w-3.5 text-accent" />
                   </span>
