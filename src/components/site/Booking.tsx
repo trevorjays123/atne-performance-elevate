@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -50,6 +50,7 @@ type BookingValues = z.infer<typeof bookingSchema>;
 
 const Booking = () => {
   const [submitted, setSubmitted] = useState<BookingValues | null>(null);
+  const submittingRef = useRef(false);
   const {
     register,
     handleSubmit,
@@ -61,6 +62,8 @@ const Booking = () => {
   const service = watch("service");
 
   const onSubmit = async (values: BookingValues) => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     try {
       const { error } = await supabase.from("contact_submissions").insert({
         name: values.name,
@@ -80,6 +83,8 @@ const Booking = () => {
       });
       setSubmitted(values);
       window.open(PAYPAL_LINKS[values.service], "_blank", "noopener,noreferrer");
+    } finally {
+      submittingRef.current = false;
     }
   };
 
