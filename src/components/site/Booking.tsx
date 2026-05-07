@@ -71,6 +71,7 @@ const Booking = () => {
       });
       if (error) throw error;
       setSubmitted(values);
+      window.open(PAYPAL_LINKS[values.service], "_blank", "noopener,noreferrer");
     } catch (e: any) {
       // Still show confirmation so the user can pay even if persistence is unavailable.
       toast({
@@ -78,6 +79,7 @@ const Booking = () => {
         description: "We couldn't store your booking right now, but you can still complete payment.",
       });
       setSubmitted(values);
+      window.open(PAYPAL_LINKS[values.service], "_blank", "noopener,noreferrer");
     }
   };
 
