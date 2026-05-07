@@ -15,6 +15,7 @@ import {
 import { Check, Clock, MapPin, ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import gymBg from "@/assets/booking-gym.jpg";
 
 // PayPal payment links per service. Replace with real paypal.me / hosted-button URLs.
 const PAYPAL_LINKS: Record<string, string> = {
@@ -90,8 +91,19 @@ const Booking = () => {
 
   return (
     <section id="booking" className="relative py-32 px-6 overflow-hidden isolate">
-      <div className="absolute inset-0 bg-[var(--gradient-hero)]" aria-hidden="true" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl pointer-events-none" aria-hidden="true" />
+      <img
+        src={gymBg}
+        alt=""
+        width={1920}
+        height={1280}
+        loading="lazy"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Dark overlay (~70%) for WCAG AA contrast on white text */}
+      <div className="absolute inset-0 bg-[hsl(154_45%_6%/0.78)]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-transparent to-primary/70" aria-hidden="true" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/15 blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
