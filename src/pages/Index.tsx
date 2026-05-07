@@ -25,14 +25,17 @@ const Index = () => {
       postalCode: studioLocation.postalCode,
       addressCountry: studioLocation.country,
     },
-    areaServed: studioLocation.serviceArea,
+    areaServed: studioLocation.serviceAreas.map((city) => ({
+      "@type": "City",
+      name: `${city}, MN`,
+    })),
   };
 
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="ATNE Performance — Coaching & Relief Therapy"
-        description={`Premium performance coaching and relief therapy in ${fullAddress}. Serving the Twin Cities — Minneapolis & St. Paul.`}
+        title="ATNE Performance — MN Coaching & Relief Therapy"
+        description={`Performance coaching & relief therapy in ${studioLocation.city}, MN. Serving ${studioLocation.serviceAreas.join(", ")} & the Twin Cities.`}
         canonical="/"
         jsonLd={jsonLd}
       />
