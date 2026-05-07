@@ -1,4 +1,5 @@
 import logo from "@/assets/atne-logo.png";
+import { studioLocation } from "@/config/location";
 
 const Footer = () => {
   return (
@@ -13,8 +14,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-sm text-foreground/80 md:text-right max-w-md">
-            Serving high-performers in Minnesota and the Twin Cities area
-            <span className="text-muted-foreground"> (Minneapolis &amp; St. Paul)</span>.
+            Serving high-performers across Minnesota — proudly coaching clients in{" "}
+            <span className="text-foreground/90 font-medium">
+              {studioLocation.serviceAreas.join(", ")}
+            </span>{" "}
+            and the greater Twin Cities.
           </div>
         </div>
 

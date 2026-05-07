@@ -14,7 +14,8 @@ export const studioLocation = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=5000+France+Ave+S+Edina+MN+55410",
   phone: "(612) 555-0144",
   email: "hello@atneperformance.com",
-  serviceArea: "Minneapolis, St. Paul, Edina, Minnetonka, Woodbury & the greater Twin Cities",
+  serviceArea: "Edina, Minneapolis, St. Paul, Minnetonka, Woodbury & the greater Twin Cities",
+  serviceAreas: ["Edina", "Minneapolis", "St. Paul", "Minnetonka", "Woodbury"],
 };
 
 export const fullAddress = (() => {

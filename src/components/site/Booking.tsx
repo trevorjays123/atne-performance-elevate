@@ -138,6 +138,16 @@ const Booking = () => {
                     <ExternalLink className="ml-1 h-4 w-4" />
                   </a>
                 </Button>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                  PayPal opens in a new tab. After paying, close that tab or{" "}
+                  <a
+                    href="/thank-you"
+                    className="font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    return to our confirmation page
+                  </a>{" "}
+                  to finish.
+                </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(null)}
