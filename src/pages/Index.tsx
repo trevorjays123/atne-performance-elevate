@@ -3,6 +3,8 @@ import Hero from "@/components/site/Hero";
 import DualApproach from "@/components/site/DualApproach";
 import ServiceCategories from "@/components/site/ServiceCategories";
 import Booking from "@/components/site/Booking";
+import Testimonials from "@/components/site/Testimonials";
+import StickyCTA from "@/components/site/StickyCTA";
 import Footer from "@/components/site/Footer";
 import SEO from "@/components/site/SEO";
 import { studioLocation, fullAddress } from "@/config/location";
@@ -44,7 +46,9 @@ const Index = () => {
       <DualApproach />
       <ServiceCategories />
       <Booking />
+      <Testimonials />
       <Footer />
+      <StickyCTA />
     </main>
   );
 };
