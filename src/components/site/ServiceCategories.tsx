@@ -76,7 +76,7 @@ const ServiceCategories = () => {
             <article
               key={s.id}
               id={s.id}
-              className="glass rounded-3xl p-8 md:p-10 shadow-[var(--shadow-glass)] hover:shadow-[var(--shadow-elegant)] transition-all duration-500"
+              className="group glass rounded-3xl p-8 md:p-10 shadow-[var(--shadow-glass)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 hover:scale-[1.015] transition-all duration-500 ease-out"
             >
               <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10">
                 <div>
@@ -97,6 +97,14 @@ const ServiceCategories = () => {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-6 max-h-0 opacity-0 -translate-y-1 overflow-hidden group-hover:max-h-20 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={`#${s.id}`} aria-label={`Learn more about ${s.title}`}>
+                        Learn More
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 <div className="rounded-2xl border border-border bg-card/70 p-6">
