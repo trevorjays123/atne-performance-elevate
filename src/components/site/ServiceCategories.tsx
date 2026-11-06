@@ -63,7 +63,7 @@ const ServiceCategories = () => {
       <div className="container mx-auto">
         <div className="max-w-2xl mb-16">
           <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Services</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-primary font-bold leading-tight">
+          <h2 className="mt-4 font-display text-4xl md:text-6xl uppercase text-primary font-extrabold leading-[0.95]">
             Three paths. <span className="text-gradient">One standard.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -76,17 +76,17 @@ const ServiceCategories = () => {
             <article
               key={s.id}
               id={s.id}
-              className="group glass rounded-3xl p-8 md:p-10 shadow-[var(--shadow-glass)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 hover:scale-[1.015] transition-all duration-500 ease-out"
+              className="group bg-card border border-border border-l-4 border-l-accent rounded-md p-8 md:p-10 shadow-[var(--shadow-glass)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all duration-500 ease-out"
             >
               <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10">
                 <div>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-[var(--shadow-glow)]">
+                    <div className="h-14 w-14 rounded-sm bg-primary flex items-center justify-center">
                       <s.icon className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">{s.eyebrow}</div>
-                      <h3 className="font-display text-3xl text-primary font-bold">{s.title}</h3>
+                      <h3 className="font-display text-4xl uppercase text-primary font-extrabold">{s.title}</h3>
                     </div>
                   </div>
                   <p className="text-foreground/75 leading-relaxed">{s.description}</p>
@@ -107,19 +107,19 @@ const ServiceCategories = () => {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-border bg-card/70 p-6">
+                <div className="rounded-sm bg-primary text-primary-foreground p-6">
                   <div className="flex items-baseline justify-between mb-4">
-                    <h4 className="font-display text-lg text-primary font-bold">Pricing</h4>
-                    <span className="text-xs text-muted-foreground">Indicative rates</span>
+                    <h4 className="font-display text-xl uppercase tracking-wide font-bold">Pricing</h4>
+                    <span className="text-xs text-primary-foreground/70">Indicative rates</span>
                   </div>
-                  <ul className="divide-y divide-border">
+                  <ul className="divide-y divide-primary-foreground/15">
                     {s.tiers.map((t) => (
                       <li key={t.name} className="flex items-center justify-between py-3">
                         <div>
-                          <div className="text-sm font-medium text-primary">{t.name}</div>
-                          <div className="text-xs text-muted-foreground">{t.duration}</div>
+                          <div className="text-sm font-semibold">{t.name}</div>
+                          <div className="text-xs text-primary-foreground/70">{t.duration}</div>
                         </div>
-                        <div className="font-display text-lg text-primary font-bold">{t.price}</div>
+                        <div className="font-display text-2xl text-accent font-bold">{t.price}</div>
                       </li>
                     ))}
                   </ul>
@@ -135,7 +135,7 @@ const ServiceCategories = () => {
           ))}
 
           {/* Group work placeholder */}
-          <article className="rounded-3xl border border-dashed border-accent/40 bg-accent/5 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <article className="rounded-md border-2 border-dashed border-accent/40 bg-accent/5 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex items-start gap-4">
               <div className="h-12 w-12 rounded-2xl bg-accent/15 flex items-center justify-center">
                 <Users className="h-5 w-5 text-accent" />
