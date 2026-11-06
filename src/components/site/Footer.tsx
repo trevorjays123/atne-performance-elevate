@@ -3,38 +3,40 @@ import { studioLocation } from "@/config/location";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 px-6">
-      <div className="container mx-auto flex flex-col gap-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="ATNE Performance" width={32} height={32} className="h-8 w-8" loading="lazy" />
+    <footer className="bg-primary text-primary-foreground py-16 px-6">
+      <div className="container mx-auto flex flex-col gap-10">
+        <div className="grid md:grid-cols-3 gap-10">
+          <div className="flex items-start gap-3">
+            <img src={logo} alt="ATNE Performance" width={48} height={48} className="h-12 w-12" loading="lazy" />
             <div>
-              <div className="font-display text-primary font-semibold">ATNE Performance</div>
-              <div className="text-xs text-muted-foreground">Elevate. Restore. Become.</div>
+              <div className="font-display text-2xl uppercase font-extrabold tracking-wide">ATNE Performance</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-accent font-bold mt-1">All Thought; No Emotion</div>
             </div>
           </div>
-          <div className="text-sm text-foreground/80 md:text-right max-w-md">
-            Serving high-performers across Minnesota — proudly coaching clients in{" "}
-            <span className="text-foreground/90 font-medium">
-              {studioLocation.serviceAreas.join(", ")}
-            </span>{" "}
-            and the greater Twin Cities.
+          <div>
+            <h4 className="font-display uppercase font-bold tracking-widest text-sm text-accent mb-3">Explore</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
+              <li><a href="/#services" className="hover:text-accent transition-colors">Services</a></li>
+              <li><a href="/#booking" className="hover:text-accent transition-colors">Book a Session</a></li>
+              <li><a href="/contact" className="hover:text-accent transition-colors">Contact &amp; Location</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-display uppercase font-bold tracking-widest text-sm text-accent mb-3">Service Area</h4>
+            <p className="text-sm text-primary-foreground/80 leading-relaxed">
+              Serving high-performers across Minnesota — {studioLocation.serviceAreas.join(", ")} and the greater Twin Cities.
+            </p>
           </div>
         </div>
 
-        <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl">
-          <span className="font-medium text-foreground/80">Disclaimer:</span> Coaching services are provided as
+        <p className="text-xs text-primary-foreground/70 leading-relaxed max-w-3xl">
+          <span className="font-semibold text-primary-foreground/90">Disclaimer:</span> Coaching services are provided as
           performance education and are not a substitute for licensed medical or psychological treatment unless
           explicitly stated.
         </p>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 pt-6 border-t border-border/60">
-          <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} ATNE Performance. All rights reserved.
-          </div>
-          <a href="/contact" className="text-xs text-primary hover:text-accent transition-colors font-medium">
-            Contact &amp; Location →
-          </a>
+        <div className="pt-6 border-t border-primary-foreground/15 text-xs text-primary-foreground/70">
+          © {new Date().getFullYear()} ATNE Performance. All rights reserved.
         </div>
       </div>
     </footer>
