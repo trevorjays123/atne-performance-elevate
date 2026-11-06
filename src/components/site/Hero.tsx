@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-forest.jpg";
-import logo from "@/assets/atne-logo.png";
 
 const stats = [
   { k: "10+", v: "Years Experience" },
@@ -28,7 +27,6 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl animate-fade-up">
           <div className="flex items-center gap-4 mb-8">
-            <img src={logo} alt="ATNE Performance logo" width={80} height={80} className="h-16 w-16 md:h-20 md:w-20" />
             <span className="h-px w-12 bg-accent" />
             <span className="font-display text-sm md:text-base uppercase tracking-[0.3em] text-accent font-bold">
               All Thought; No Emotion
